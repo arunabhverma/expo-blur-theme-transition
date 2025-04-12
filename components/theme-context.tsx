@@ -33,7 +33,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     );
     setTimeout(() => {
       setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-    }, 100);
+    }, 300);
   };
 
   const animatedStyle = useAnimatedStyle(() => {
@@ -63,7 +63,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
             { zIndex: 1 },
             animatedBlurStyle,
           ]}
-          tint={theme === "dark" ? "dark" : "light"}
+          tint={theme === "dark" ? "light" : "dark"}
         />
         <Animated.View style={[{ flex: 1 }, animatedStyle]}>
           {children}
